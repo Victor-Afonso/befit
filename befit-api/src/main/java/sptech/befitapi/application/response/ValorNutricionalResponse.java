@@ -1,8 +1,6 @@
-package sptech.befitapi.application.entity;
+package sptech.befitapi.application.response;
 
-public class ValorNutricional {
-
-    private String nome;
+public class ValorNutricionalResponse {
 
     private Double proteina;
 
@@ -14,15 +12,12 @@ public class ValorNutricional {
 
     private Double caloria;
 
-    private Double quantidade;
-
-
-    public String getNome() {
-        return nome;
-    }
-
-    public void setNome(String nome) {
-        this.nome = nome;
+    public ValorNutricionalResponse(Double proteina, Double lipidio, Double carboidrato, Double sodio, Double caloria) {
+        this.proteina = proteina;
+        this.lipidio = lipidio;
+        this.carboidrato = carboidrato;
+        this.sodio = sodio;
+        this.caloria = caloria;
     }
 
     public Double getProteina() {
@@ -63,13 +58,5 @@ public class ValorNutricional {
 
     public void setCaloria(Double caloria) {
         this.caloria = caloria;
-    }
-
-    public Double getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(Double quantidade) {
-        this.quantidade = quantidade;
     }
 }

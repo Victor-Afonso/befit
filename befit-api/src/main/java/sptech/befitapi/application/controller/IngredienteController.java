@@ -5,7 +5,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import sptech.befitapi.application.entity.ValorNutricional;
+import sptech.befitapi.application.request.ValorNutricionalRequest;
+import sptech.befitapi.application.response.ValorNutricionalResponse;
 import sptech.befitapi.resources.repository.IngredienteRepository;
 import sptech.befitapi.resources.repository.entity.Ingrediente;
 
@@ -24,16 +25,23 @@ public class IngredienteController {
     }
 
     @GetMapping("/valor-nutricional")
-    public List<ValorNutricional> getValorNutricional(@RequestBody List<ValorNutricional> valorNutricional){
-        for (ValorNutricional vn:
+    public ValorNutricionalResponse getValorNutricional(@RequestBody List<ValorNutricionalRequest> valorNutricional){
+        double totalProteina = 0.0;
+        double totalLipidio = 0.0;
+        double totalCarboidrato = 0.0;
+        double totalSodio = 0.0;
+        double totalCaloria = 0.0;
+
+        for (ValorNutricionalRequest vn:
                 valorNutricional) {
-            vn.setProteina(vn.getProteina() * vn.getQuantidade());
-            vn.setLipidio(vn.getLipidio() * vn.getQuantidade());
-            vn.setCarboidrato(vn.getCarboidrato() * vn.getQuantidade());
-            vn.setSodio(vn.getSodio() * vn.getQuantidade());
-            vn.setCaloria(vn.getCaloria() * vn.getQuantidade());
+            totalProteina+= (vn.getProteina() * vn.getQuantidade());
+            totalLipidio+= (vn.getLipidio() * vn.getQuantidade());
+            totalCarboidrato+= (vn.getCarboidrato() * vn.getQuantidade());
+            totalSodio+= (vn.getSodio() * vn.getQuantidade());
+            totalCaloria+= (vn.getCaloria() * vn.getQuantidade());
 
         }
-        return valorNutricional;
+
+        return new ValorNutricionalResponse(totalProteina, totalLipidio, totalCarboidrato, totalSodio, totalCaloria);
     }
 }
