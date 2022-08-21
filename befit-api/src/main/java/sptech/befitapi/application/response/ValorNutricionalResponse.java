@@ -1,8 +1,14 @@
 package sptech.befitapi.application.response;
 
+import sptech.befitapi.application.entity.ValorNutricional;
+
+import java.util.List;
+
 public class ValorNutricionalResponse {
 
     private Double proteina;
+
+    private Integer porcao;
 
     private Double lipidio;
 
@@ -12,12 +18,22 @@ public class ValorNutricionalResponse {
 
     private Double caloria;
 
-    public ValorNutricionalResponse(Double proteina, Double lipidio, Double carboidrato, Double sodio, Double caloria) {
+    private List<ValorNutricional> valorNutricionalCalculado;
+
+    public ValorNutricionalResponse(Double proteina,
+                                    Integer porcao,
+                                    Double lipidio,
+                                    Double carboidrato,
+                                    Double sodio,
+                                    Double caloria,
+                                    List<ValorNutricional> valorNutricionalList) {
         this.proteina = proteina;
+        this.porcao = porcao;
         this.lipidio = lipidio;
         this.carboidrato = carboidrato;
         this.sodio = sodio;
         this.caloria = caloria;
+        this.valorNutricionalCalculado = valorNutricionalList;
     }
 
     public Double getProteina() {
@@ -26,6 +42,14 @@ public class ValorNutricionalResponse {
 
     public void setProteina(Double proteina) {
         this.proteina = proteina;
+    }
+
+    public Integer getPorcao() {
+        return porcao;
+    }
+
+    public void setPorcao(Integer porcao) {
+        this.porcao = porcao;
     }
 
     public Double getLipidio() {
@@ -58,5 +82,13 @@ public class ValorNutricionalResponse {
 
     public void setCaloria(Double caloria) {
         this.caloria = caloria;
+    }
+
+    public List<ValorNutricional> getValorNutricionalCalculado() {
+        return valorNutricionalCalculado;
+    }
+
+    public void setValorNutricionalCalculado(List<ValorNutricional> valorNutricionalCalculado) {
+        this.valorNutricionalCalculado = valorNutricionalCalculado;
     }
 }

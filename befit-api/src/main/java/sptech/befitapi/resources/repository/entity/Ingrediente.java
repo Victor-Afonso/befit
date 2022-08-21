@@ -13,6 +13,8 @@ public class Ingrediente {
 
     private String nome;
 
+    private Integer porcao;
+
     private Double proteina;
 
     private Double lipidio;
@@ -37,6 +39,14 @@ public class Ingrediente {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public Integer getPorcao() {
+        return porcao;
+    }
+
+    public void setPorcao(Integer porcao) {
+        this.porcao = porcao;
     }
 
     public Double getProteina() {

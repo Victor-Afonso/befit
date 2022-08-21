@@ -1,4 +1,4 @@
-_key,id,nome,base_qty,base_unit,category_id,proteina,attributes/protein/unit,lipidio,attributes/lipid/unit,carboidrato,attributes/carbohydrate/unit,sodio,attributes/sodium/unit,caloria,attributes/energy/kj
+_key,id,nome,porcao,base_unit,category_id,proteina,attributes/protein/unit,lipidio,attributes/lipid/unit,carboidrato,attributes/carbohydrate/unit,sodio,attributes/sodium/unit,caloria,attributes/energy/kj
 0,1,"Arroz, integral, cozido",100,g,1,2.58825,g,1.00033333333333,g,25.80975,g,1.24466666666667,mg,123.5348925,516.86999022
 1,2,"Arroz, integral, cru",100,g,1,7.32328586956522,g,1.86483333333333,g,77.4507141304348,g,1.64566666666667,mg,359.678002032609,1504.89276050444
 2,3,"Arroz, tipo 1, cozido",100,g,1,2.52081666666667,g,0.227,g,28.05985,g,1.20066666666667,mg,128.258485666667,536.633504029333
