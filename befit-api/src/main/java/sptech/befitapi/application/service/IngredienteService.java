@@ -15,4 +15,18 @@ public class IngredienteService {
     public List<Ingrediente> findCatalogo(){
         return ingredienteRepository.findAll();
     }
+
+    public String adicionar(Ingrediente ingrediente){
+         ingredienteRepository.save(ingrediente);
+
+         return "Adicionado";
+
+    }
+
+    public String deletar(Integer id){
+        ingredienteRepository.deleteById(id);
+
+        return "Ingrediente removido";
+    }
+
 }
